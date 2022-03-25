@@ -1,0 +1,8 @@
+name: "depot luet custom"
+description: "depot de test"
+type: "docker"
+enable: true
+cached: true
+priority: 2
+urls:
+  - "quay.io/capesos/test"
