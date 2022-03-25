@@ -50,7 +50,7 @@ jobs:
         CURRENT_PACKAGE:  ${{ matrix.category }}/${{ matrix.name }}@${{ matrix.version }}
     - name: Build 🔧
       uses: mudler/luet-github-action@master
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       with:
         # tree: packages
         build: true
@@ -87,7 +87,7 @@ jobs:
         ls -liah build
     - name: Download meta
       uses: mudler/luet-github-action@master
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       with:
         # tree: packages
         downloadMeta: true
@@ -96,7 +96,7 @@ jobs:
         REPOSITORY_TYPE: docker
     - name: Create repo 🔧
       uses: mudler/luet-github-action@master
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       with:
         # tree: packages
         createRepo: true
